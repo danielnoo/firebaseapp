@@ -4,9 +4,80 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>intro to firebase</title>
 </head>
 <body>
+  <h1>intro to fbase</h1>
   
+  
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+  <script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyBMETEJhDFrv6C8Cd4G7HblzJPXUcOz8ik",
+        authDomain: "learnin-b741f.firebaseapp.com",
+        projectId: "learnin-b741f",
+        storageBucket: "learnin-b741f.appspot.com",
+        messagingSenderId: "903350793365",
+        appId: "1:903350793365:web:855bf4a864fa411e5f179c"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+
+      //Creating a reference to our database
+      const dbRef = firebase.database();
+
+      
+      /// .push()
+      
+      // const firstEntry = dbRef.ref().push({
+      //   name :'asdhfaskldfhjasdf'
+      // });
+ //// .set
+      
+      // const newUserName = dbRef.ref(`usernames/${userId}`).set({
+      //   name: "Adriano"})
+
+     
+
+
+        ////.update
+
+      const newContent = {
+        platform: 'slack',
+        version: 'v8.3.1',
+        caseSensitive: false,
+        name: 'poop'
+      }
+
+  const userId = 'MkDx0B0O6jB1IKZbL95';
+
+  // dbRef.ref(`usernames/${userId}`).update(newContent);
+
+////// .remove()
+  // dbRef.ref(`usernames/${userId}`).remove();
+
+
+/////// .on()
+
+dbRef.ref().on('value', (data) => {
+  console.log(data.val())
+})
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </script>
 </body>
 </html>
